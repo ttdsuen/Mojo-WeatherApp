@@ -97,8 +97,61 @@ Sample request and response,
 $ curl -d '{"cities":["Los Angeles,US"]}' -X GET http://127.0.0.1:3000/weather/api/v1/cities
 ```
 ```json
-{"results":{"Los Angeles":{"base":"stations","clouds":{"all":40},"cod":200,"coord":{"lat":34.05,"lon":-118.24},"dt":1586633539,"id":5368361,"main":{"feels_like":288.69,"humidity":63,"pressure":1016,"temp":291.16,"temp_max":293.71,"temp_min":288.15},"name":"Los Angeles","sys":{"country":"US","id":3971,"sunrise":1586611562,"sunset":1586658069,"type":1},"timezone":-25200,"visibility":16093,"weather":[{"description":"scattered clouds","icon":"03d","id":802,"main":"Clouds"}],"wind":{"deg":214,"speed":3.94}}},"success":true}
+{
+  "results": {
+    "Los Angeles": {
+      "base":"stations",
+      "clouds": {
+        "all":40
+      },
+      "cod":200,
+      "coord": {
+        "lat":34.05,
+        "lon":-118.24
+      },
+      "dt":1586633539,
+      "id":5368361,
+      "main": {
+        "feels_like":288.69,
+        "humidity":63,
+        "pressure":1016,
+        "temp":291.16,
+        "temp_max":293.71,
+        "temp_min":288.15
+      },
+      "name":"Los Angeles",
+      "sys": {
+        "country":"US",
+        "id":3971,
+        "sunrise":1586611562,
+        "sunset":1586658069,
+        "type":1
+      },
+      "timezone":-25200,
+      "visibility":16093,
+      "weather": [
+        {
+          "description":"scattered clouds",
+          "icon":"03d",
+          "id":802,
+          "main":"Clouds"
+        }
+      ],
+      "wind": {
+        "deg":214,
+        "speed":3.94
+      }
+    }
+  },
+  "success":true
+}
 ```
+
+Stopping Hypnotoad
+```
+$ hypnotoad -s ./script/weather_app
+```
+
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
