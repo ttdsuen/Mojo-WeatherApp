@@ -1,8 +1,17 @@
 {
-  secrets => ['becb7e38fe3a2d73877613ee7a84d373f6cd33e7'],
+  secrets => ['becb7e38fe3a2d73c77613ee7a84d373f6cd33e7'],
   weather_api => {
     url => 'http://api.openweathermap.org/data/2.5/weather',
     key => ''
   },
-  max_concur_req => 2
+  max_concur_req => 2,
+  hypnotoad => {
+    listen => ['http://*:3000'],
+    accept => 100,
+    backlog => 128,
+    clients => 100,
+    graceful_timeout => 5,
+    heartbeat_interval => 3,
+    heartbeat_timeout => 2
+  }
 }
