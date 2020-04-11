@@ -5,18 +5,19 @@ Weather WebApp Demo with Mojolicious and OpenWeather API
 ## Motivation
 
 Over my long IT career, I've been doing a lot of different things. The bad part of this
-is that after figuring out how to do one thing, after leaving behind for a while, I
-do not remember things in details anymore. As part of this, I try to document some code
+is that after figuring out how to do one thing, after leaving things behind for a while, I
+do not recall things in details anymore. In order to help myself, I try to document some code
 patterns in GitHub so that if I need to do something similar in future, I can always
 go back and quickly get something up and running.
 
-This one is about using Mojolicious to develop webapp. I started using Mojolicious back
+This one is about using Mojolicious to develop webapp. I started using Mojolicious
 in 2015, and back then there was no `Mojo::Promise`. I revisited it recently, and I try
 to write some code based on it as well as `Mojo::EventEmitter` to try to maximize the
 concurrency in making multiple external non-blocking calls under some
-concurrency constraints (i.e. do not exceed N number of external non-blocking calls).
-This result of this design is a more robust web service that is less susceptible to
-incoming requests that need many external non-blocking calls.
+constraints (i.e. do not exceed N number of external non-blocking calls for a given request).
+The result of this design is a more robust web service that is less susceptible to
+incoming requests that need many external non-blocking calls (like in this case, a request to
+ask for weather for N cities where N > 1000 for instance).
 
 ## Framework Used
 
